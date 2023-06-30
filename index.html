@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left Panel Navigation</title>
+  <style>
+    /* CSS for the left panel */
+    #left-panel {
+      width: 200px;
+      height: 100%;
+      background-color: #f2f2f2;
+      float: left;
+    }
+    
+    /* CSS for the content area */
+    #content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    function showContent(contentId) {
+      var content = document.getElementById(contentId);
+      var contentDivs = document.getElementsByClassName('content-div');
+      
+      for (var i = 0; i < contentDivs.length; i++) {
+        contentDivs[i].style.display = 'none';
+      }
+      
+      content.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div id="left-panel">
+    <ul>
+      <li><a href="#" onclick="showContent('home-content')">Home</a></li>
+      <li><a href="#" onclick="showContent('contact-content')">Contact</a></li>
+      <li><a href="#" onclick="showContent('info-content')">Information</a></li>
+      <li><a href="#" onclick="showContent('guide-content')">Guide</a></li>
+    </ul>
+  </div>
+  
+  <div id="content">
+    <div id="home-content" class="content-div" style="display: none;">
+      <h2>Welcome to the Home Page</h2>
+      <p>This is the home page content.</p>
+    </div>
+    
+    <div id="contact-content" class="content-div" style="display: none;">
+      <h2>Contact Information</h2>
+      <p>This is the contact information page.</p>
+    </div>
+    
+    <div id="info-content" class="content-div" style="display: none;">
+      <h2>Information</h2>
+      <p>This is the information page.</p>
+    </div>
+    
+    <div id="guide-content" class="content-div" style="display: none;">
+      <h2>Guide</h2>
+      <p>This is the guide page.</p>
+    </div>
+  </div>
+</body>
+</html>
